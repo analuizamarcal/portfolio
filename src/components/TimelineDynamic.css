@@ -1,0 +1,136 @@
+.timeline-dynamic {
+    height: calc(100vh - 60px);
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  .timeline-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+    max-width: 800px;
+    z-index: 1;
+  }
+  
+  .timeline-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+  }
+
+  .timeline-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 100px;
+  }
+
+  .timeline-text h4 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 2rem;
+    box-sizing: border-box;
+    pointer-events: none; /* pra evitar que essa camada bloqueie o conteúdo */
+  }
+  
+  .timeline-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all; /* reativa o clique nos botões */
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .timeline-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 0.5rem;
+  }
+  
+  .timeline-indicators .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .timeline-indicators .dot.active {
+    transform: scale(1.2);
+  }  
+  
+  /* Tema claro */
+  body.light .timeline-img {
+    outline: 4px solid #cc95ff;          /* cor da borda */
+    outline-offset: 8px;                 /* distância da borda pra imagem */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* sombra */
+  }
+
+  body.light .timeline-text h4 {
+    color: #cc95ff;
+    text-shadow: 0 0 10px white;
+  }
+
+  body.light .timeline-buttons button {
+    background-color: #cc95ff;
+    color: #fff;
+  }
+  body.light .timeline-buttons button:hover {
+    box-shadow: inset 0 0 10px #fff;
+  }
+
+  body.light .timeline-indicators .dot.active {
+    background-color: #cc95ff;
+  }  
+  
+
+  /* Tema escuro */
+  body.dark .timeline-img {
+    outline: 4px solid blueviolet;          /* cor da borda */
+    outline-offset: 8px;                 /* distância da borda pra imagem */
+    box-shadow: 0 4px 15px rgb(138, 43, 226, 0.2); /* sombra */
+  }
+
+  body.dark .timeline-text h4 {
+    color: blueviolet;
+    text-shadow: 0 0 10px #000;
+  }
+
+  body.dark .timeline-buttons button {
+    background-color: blueviolet;
+    color: #fff;
+  }
+
+  body.dark .timeline-buttons button:hover {
+    box-shadow: inset 0 0 10px #000;
+  }
+
+  body.dark .timeline-indicators .dot.active {
+    background-color: blueviolet;
+  }  

@@ -1,0 +1,37 @@
+.about-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.about-title {
+    margin: 12px;
+    font-size: 2rem;
+    padding: 4px 20px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #cc95ff;
+    max-width: fit-content;
+}
+
+.about-section-title {
+    font-size: 1.4rem;
+    padding: 2px 10px;
+    margin: 10px;
+    margin-bottom: 50px;
+    border-radius: 2px;
+    color: white;
+    max-width: fit-content;
+  }
+  
+  /* Tema claro */
+  body.light .about-section-title {
+    background-color: blueviolet;
+  }
+  
+  /* Tema escuro */
+  body.dark .about-section-title {
+    background-color: #1e1e1e;
+  }

@@ -1,0 +1,132 @@
+.home {
+    height: calc(100vh - 60px);
+}
+
+.ana {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.highlight {
+    font-weight: bold;
+    color: blueviolet;
+}  
+
+.presentation {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentation h1 {
+    color: white;
+    max-width: fit-content;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+.presentation img, div {
+    margin: 0 10px;
+}
+
+.slogan h1 {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+    border-radius: 2px;
+}
+  
+/* Pequeno delay no segundo h1 pra dar efeito em sequência */
+.slogan h1:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.buttons a {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.ana, .buttons {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 1.2s; /* depois que os h1 terminam */
+  }
+
+/* Tema claro */
+body.light .ana {
+    border: 10px solid #cc95ff;
+}
+
+body.light .highlight {
+    text-shadow: 0 0 10px white;
+}
+
+body.light .slogan h1 {
+    background-color: #cc95ff;
+}
+
+body.light .buttons a {
+    background-color: #cc95ff;
+    transition: box-shadow 0.2s;
+}
+
+body.light .buttons a:hover {
+    box-shadow: 0 0 10px #cc95ff;
+}
+
+/* Tema escuro */
+body.dark .ana {
+    border: 10px solid blueviolet;
+}
+
+body.dark .highlight {
+    text-shadow: 0 0 10px blueviolet;
+}
+body.dark .slogan h1 {
+    background-color: #1e1e1e;
+}
+
+body.dark .buttons a {
+    background-color: #1e1e1e;
+    transition: box-shadow 0.2s;
+}
+
+body.dark .buttons a:hover {
+    box-shadow: 0 0 10px blueviolet;
+}
+
+/* Animações */
+@keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
